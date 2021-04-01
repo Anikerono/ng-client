@@ -1,0 +1,109 @@
+<mat-card class="example-card">
+  <h2>Trip Data Form
+    <button (click)= "back()" class="right" mat-button>
+      <mat-icon>close</mat-icon>
+    </button>
+  </h2>
+  
+  <mat-card-content class="frm">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Step 1</ng-template>
+      <mat-form-field appearance="fill">
+        <mat-label>Status</mat-label>
+        <mat-select formControlName="status">
+          <mat-option
+            *ngFor="let status of statuses"
+            value="{{ status.status }}"
+            >{{ status.status }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label class = "required">Vehicle Number</mat-label>
+        <mat-select formControlName="vehicle_no">
+          <mat-option
+            *ngFor="let vehicle of vehicles"
+            value="{{ vehicle.vehicle_no }}"
+            >{{ vehicle.vehicle_no }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label class = "required">Driver Name</mat-label>
+        <mat-select formControlName="driver_id">
+          <mat-option
+            (click)="driver_name = driver.first_name + ' ' + driver.last_name"
+            *ngFor="let driver of drivers"
+            value="{{ driver._id }}"
+            >{{ driver.first_name + " " + driver.last_name }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label class = "required">Load Datetime</mat-label>
+        <input
+          matInput
+          [ngxMatDatetimePicker]="picker1"
+          placeholder="Choose a date"
+          formControlName="load_datetime"
+        />
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="picker1"
+        ></mat-datepicker-toggle>
+        <ngx-mat-datetime-picker #picker1></ngx-mat-datetime-picker>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label class = "required">From</mat-label>
+        <input formControlName="from" matInput />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label class = "required">Destination</mat-label>
+        <input formControlName="destination" matInput />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label class = "required">Load Quantity</mat-label>
+        <input formControlName="load_qty" matInput />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Unload Datetime (Optional)</mat-label>
+        <input
+          matInput
+          [ngxMatDatetimePicker]="picker2"
+          placeholder="Choose a date"
+          formControlName="unload_datetime"
+        />
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="picker2"
+        ></mat-datepicker-toggle>
+        <ngx-mat-datetime-picker #picker2></ngx-mat-datetime-picker>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Unload Quantity (Optional)</mat-label>
+        <input formControlName="unload_qty" matInput />
+      </mat-form-field>
+
+      <div *ngIf="rolecheck()">
+        <mat-form-field appearance="fill">
+            <mat-label>Approval</mat-label>
+            <mat-select formControlName="approval">
+              <mat-option value="Yes">Yes</mat-option>
+              <mat-option value="No">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>  
+
+      <div *ngIf="newForm(); else elseNotDone">
+        <button mat-raised-button (click)="save(firstFormGroup.value)" color="primary" >Save</button>
+      </div>
+      <ng-template #elseNotDone>
+        <button mat-raised-button (click)="update(firstFormGroup.value)" color="primary" >Update</button>
+      </ng-template>
+      
+    </form>
+  </mat-card-content>
+</mat-card>

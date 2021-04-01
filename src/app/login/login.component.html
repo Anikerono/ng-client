@@ -1,0 +1,55 @@
+
+<div class="centered">
+  <mat-card class="example-card">
+    <mat-card-content>
+      <form class="example-form">
+        <!-------EMAIL------------>
+        <mat-form-field class="example-full-width">
+          <mat-label>Phone Number</mat-label>
+          <input
+          (keyup.enter)="login()"
+            type="text"
+            matInput
+            [formControl]="emailFormControl"
+            placeholder="Ex. 9848431684"
+          />
+          <mat-error
+            *ngIf="
+              emailFormControl.errors && !emailFormControl.hasError('required')
+            "
+          >
+            Please enter a valid phone number
+          </mat-error>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Phone Number is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <!-------PASSWORD------------>
+        <mat-form-field class="example-full-width">
+          <mat-label>Password</mat-label>
+          <input (keyup.enter)="login()" type="password" matInput [formControl]="passwordFormControl" />
+          <mat-error *ngIf="!passwordFormControl.hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="passwordFormControl.hasError('required')">
+            Password is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button
+        (click)="login()"
+        
+        [disabled]="
+          emailFormControl.errors || passwordFormControl.hasError('required')
+        "
+        mat-raised-button
+        color="primary"
+      >
+        Login
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

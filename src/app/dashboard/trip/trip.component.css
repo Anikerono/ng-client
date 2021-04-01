@@ -1,0 +1,57 @@
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.example-button-container {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+}
+
+.bad {
+  background-color: red;
+  padding: 5px;
+  font-weight: bold;
+  color: white;
+}
+
+.good {
+  background-color: green;
+  padding: 5px;
+  font-weight: bold;
+  color: white;
+}
+.mat-elevation-z8{
+  margin-top: 10px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+}
+ .table{
+  flex-shrink: 0;
+} 
+.action{
+  padding: 18px;
+  padding-left: 3%;
+}
+.actiontd{
+align-items: center;
+}
+.SNo{
+  padding-right: 3%;
+  text-align: center;
+} 
+.load{
+  text-align: center;
+  padding-right:2.5%;
+}
+.unload{
+  text-align: center;
+  padding-right:3%;
+}

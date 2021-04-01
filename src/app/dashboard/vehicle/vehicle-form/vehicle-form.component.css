@@ -1,0 +1,32 @@
+.example-card {
+    max-width: 400px;
+  }
+  :host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .example-card{
+    display: flex;
+    width: 300px;;
+    flex-direction: column;
+  }
+  .example-card mat-card-content form {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0px;
+  }
+  .vehicle-form-body{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .required::after
+{
+    color: red;
+    content: " * ";
+}
+.right{
+  position: absolute;
+  right: 5px;
+}

@@ -1,0 +1,45 @@
+.example-card {
+  max-width: 100%; 
+  align-self: center;
+}
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+form{
+  width: auto;
+  display: grid;
+  grid-template-columns: max-content;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+} 
+/* .example-sidenav-content{
+  display: flex;
+  justify-content: center;
+}
+.example-sidenav-content div{
+  padding-right: 20px;
+} */
+mat-card-content{
+  overflow: unset;
+}
+mat-card-content form{
+  max-width: 400px;
+  width: 75vw;
+  flex-grow: 0;
+}
+mat-form-field{
+  flex-shrink: 0;
+}
+.required::after
+{
+    color: red;
+    content: " * ";
+}
+.right{
+  position: absolute;
+  right: 5px;
+}

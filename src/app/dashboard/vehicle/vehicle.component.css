@@ -1,0 +1,24 @@
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  
+  
+  .example-button-container {
+    position: fixed; right: 24px; bottom: 24px
+  }
+  mat-paginator{
+    min-width: 452.19px;
+  }
+  .mat-elevation-z8{
+    min-width: 891px;
+    margin-right:10px ;
+  }
+  .action{
+    padding-left: 2%;
+  }

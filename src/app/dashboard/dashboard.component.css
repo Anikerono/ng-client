@@ -1,0 +1,52 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.example-container {
+  width: auto;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.example-sidenav-content {
+  padding-left: 24px;
+  padding-top: 20px;
+  height: auto;
+  width: auto;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.example-sidenav {
+  padding: 0px;
+}
+span{
+  margin: 0;
+  padding: 0;
+}
+.toolbar {
+   /* background-image: linear-gradient(
+    to left,
+    rgba(122, 117, 151, 0),
+    rgb(102, 103, 107)
+  );  */
+}
+.example-container div{
+padding: 2%;
+padding-left:2%;
+flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  #sidenav {
+      display: none;
+  }
+  mat-drawer{
+    width: 55px;
+  }
+}
+.vehicles,.users,.trips,.dashboard{
+  padding:5px;
+}

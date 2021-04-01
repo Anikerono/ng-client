@@ -1,0 +1,32 @@
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+
+
+.example-button-container {
+  position: fixed; right: 24px; bottom: 24px
+}
+tr{
+  padding:10%;
+}
+
+.action{
+  padding: 18px;
+  display: flex;
+  flex-direction:row;
+  justify-content: space-around;
+  align-items: center;
+}
+.actiontd{
+  padding-left: 10%;
+}
+.SNo{
+  text-align: center;
+  /* padding-right: 2%; */
+}

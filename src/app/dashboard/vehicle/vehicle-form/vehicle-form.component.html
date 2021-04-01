@@ -1,0 +1,46 @@
+<div class="vehicle-form-body">
+<mat-card class="example-card">
+  <h2>Vehicle Form
+    <button (click)= "back()" class="right" mat-button>
+      <mat-icon>close</mat-icon>
+    </button>
+  </h2>
+    <mat-card-content>
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Step 1</ng-template>
+        <mat-form-field appearance="fill">
+            <mat-label class = "required">Model</mat-label>
+            <input matInput formControlName="model" />
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label class = "required">Vehicle Number</mat-label>
+            <input formControlName="vehicle_no" matInput />
+          </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label class = "required">Wheeler</mat-label>
+          <input matInput formControlName="wheeler" />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label class = "required">Maker Company</mat-label>
+          <input formControlName="maker_comp" matInput />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label class = "required">Type</mat-label>
+          <input formControlName="type" matInput />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label class = "required">Year</mat-label>
+          <input formControlName="year" matInput />
+        </mat-form-field>
+        
+        <div *ngIf="newForm(); else elseNotDone">
+          <button mat-raised-button (click)="save(firstFormGroup.value)" color="primary" >Save</button>
+        </div>
+        <ng-template #elseNotDone>
+          <button mat-raised-button (click)="update(firstFormGroup.value)" color="primary" >Update</button>
+        </ng-template>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+  

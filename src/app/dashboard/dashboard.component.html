@@ -1,0 +1,76 @@
+<!--------Toolbar------->
+<mat-toolbar class="toolbar">
+    <button (click)="drawer.toggle()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+    <span class="example-spacer"></span>
+    <!--Menu Button (TOP LEFT)-->
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+  <mat-icon>more_vert</mat-icon>
+  </button>
+    <!--Log Out(Right top)-->
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="logout()">
+      <mat-icon>logout</mat-icon>
+      <span>Logout</span>
+    </button>
+    </mat-menu>
+</mat-toolbar>
+<!--Main body right-->
+<mat-drawer-container class="example-container">
+    <!-- Side bar-->
+    <mat-drawer [opened]="true" #drawer class="example-sidenav" mode="side">
+        <mat-selection-list #shoes [multiple]="false">
+            <!---Dashboard--->
+            <mat-list-option [routerLink]="['/dashboard']" style="width:140px;">
+                <span style="inline-size: fit-content" style="display: flex;flex-direction: row;">
+          <mat-icon>bar_chart</mat-icon> <a id="sidenav" class="dashboard">Dashboard</a>
+        </span>
+            </mat-list-option>
+            <!----Trips---->
+            <mat-list-option [routerLink]="['trips']">
+                <span style="inline-size: fit-content" style="display: flex;flex-direction: row;">
+          <mat-icon>maps</mat-icon> <a id="sidenav" class="trips">Trips</a>
+        </span>
+            </mat-list-option>
+            <!----Users---->
+            <mat-list-option [routerLink]="['users']">
+                <span style="inline-size: fit-content;" style="display: flex;flex-direction: row;"> 
+          <mat-icon>supervisor_account</mat-icon><a id="sidenav" class="users">Users</a>
+        </span>
+            </mat-list-option>
+            <!----Vehicles---->
+            <mat-list-option [routerLink]="['vehicles']">
+                <span style="inline-size: fit-content" style="display: flex;flex-direction: row;">
+          <mat-icon>commute</mat-icon> <div id="sidenav" class="vehicles">Vehicles</div>
+        </span>
+            </mat-list-option>
+
+            <!----Customer---->
+            <mat-list-option [routerLink]="['customer']">
+                <span style="inline-size: fit-content" style="display: flex;flex-direction: row;">
+          <mat-icon>perm_identity</mat-icon> <div id="sidenav" class="Customer">Customer</div>
+        </span>
+            </mat-list-option>
+
+            <!----Sites---->
+            <mat-list-option [routerLink]="['sites']">
+                <span style="inline-size: fit-content" style="display: flex;flex-direction: row;">
+        <mat-icon>room</mat-icon> <div id="sidenav" class="sites">Sites</div>
+      </span>
+            </mat-list-option>
+
+            <!----settings---->
+            <mat-list-option [routerLink]="['settings']">
+                <span style="inline-size: fit-content" style="display: flex;flex-direction: row;">
+      <mat-icon>settings</mat-icon> <div id="sidenav" class="settings">Settings</div>
+    </span>
+            </mat-list-option>
+
+        </mat-selection-list>
+    </mat-drawer>
+    <!--forms and contents-->
+    <div class="example-sidenav-content">
+        <router-outlet></router-outlet>
+    </div>
+</mat-drawer-container>
